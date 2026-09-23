@@ -13,3 +13,11 @@ such as creating a table or adding a column. Django builds it from the models
 and then applies it to the database. The database is not edited by hand because
 the migration file keeps the schema in sync with the code. This makes changes
 recorded, repeatable, and easy to share with other developers.
+
+## Day 3 - View vs Template
+
+A view is Python code that handles a request. It fetches data from the models,
+applies logic, and returns a response. A template is an HTML file that defines
+how the response looks. The view chooses which template to render and passes
+data to it, while the template only handles layout and display. Keeping them
+separate means the logic and the presentation can change independently.

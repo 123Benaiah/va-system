@@ -1,0 +1,14 @@
+{% extends 'va/base.html' %}
+
+{% block title %}Home - VA System{% endblock %}
+
+{% block content %}
+  <div class="jumbotron">
+    <h1>Verbal Autopsy System</h1>
+    <p>A simple tool to capture verbal autopsy records. A verbal autopsy estimates the probable cause of death by interviewing a relative or caregiver about the signs and symptoms before death.</p>
+    <p>
+      <a href="{% url 'va:add_record' %}" class="btn btn-primary btn-lg">Add Record</a>
+      <a href="{% url 'va:record_list' %}" class="btn btn-default btn-lg">View Records</a>
+    </p>
+  </div>
+{% endblock %}

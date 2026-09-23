@@ -1,0 +1,42 @@
+{% extends 'va/base.html' %}
+
+{% block title %}Records - VA System{% endblock %}
+
+{% block content %}
+  <h2>Verbal Autopsy Records</h2>
+
+  {% if records %}
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Deceased</th>
+          <th>Sex</th>
+          <th>Age</th>
+          <th>Date of Death</th>
+          <th>Place of Death</th>
+          <th>Respondent</th>
+          <th>Relationship</th>
+          <th>Interview Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for record in records %}
+          <tr>
+            <td>{{ record.deceased_name }}</td>
+            <td>{{ record.get_sex_display }}</td>
+            <td>{{ record.age_at_death }}</td>
+            <td>{{ record.date_of_death }}</td>
+            <td>{{ record.place_of_death }}</td>
+            <td>{{ record.respondent_name }}</td>
+            <td>{{ record.respondent_relationship }}</td>
+            <td>{{ record.interview_date }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <div class="alert alert-info">
+      No records yet. <a href="{% url 'va:add_record' %}">Add the first one</a>.
+    </div>
+  {% endif %}
+{% endblock %}

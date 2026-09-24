@@ -21,3 +21,11 @@ applies logic, and returns a response. A template is an HTML file that defines
 how the response looks. The view chooses which template to render and passes
 data to it, while the template only handles layout and display. Keeping them
 separate means the logic and the presentation can change independently.
+
+## Day 4 - Deploying
+
+Deploying means moving the project from a local machine to a server that is
+online, so the app is reachable through a public URL. The code is pushed to
+GitHub and then pulled onto the server, which installs the dependencies and
+runs the app. Git is used because it keeps the code in one place, tracks every
+change, and makes it easy to move the same version from local to server.
